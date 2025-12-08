@@ -4,6 +4,7 @@ import App from './components/App/App';
 import './index.css';
 import { Toaster } from 'react-hot-toast';
 
+
 const rootElement = document.getElementById('root')!;
 createRoot(rootElement).render(
   <React.StrictMode>

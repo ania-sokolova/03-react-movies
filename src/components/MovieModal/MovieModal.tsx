@@ -3,14 +3,14 @@ import { createPortal } from "react-dom";
 import type { Movie } from "../../types/movie";   
 import css from "./MovieModal.module.css";
 
-interface Props {
+interface MovieModalProps {
   movie: Movie;
   onClose: () => void;
 }
 
 const modalRoot = document.getElementById("modal-root") as HTMLElement;
 
-export default function MovieModal({ movie, onClose }: Props) {
+export default function MovieModal({ movie, onClose }: MovieModalProps) {
   useEffect(() => {
     const closeOnEsc = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.body.style.overflow = "hidden";

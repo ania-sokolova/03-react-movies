@@ -1,12 +1,12 @@
-import type { Movie } from "../../types/movie";   
 import css from "./MovieGrid.module.css";
+import type { Movie } from "../../types/movie";
 
-interface Props {
+interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
 }
 
-export default function MovieGrid({ movies, onSelect }: Props) {
+export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
   if (!movies.length) return null;
 
   return (
@@ -16,11 +16,7 @@ export default function MovieGrid({ movies, onSelect }: Props) {
           <div className={css.card} onClick={() => onSelect(movie)}>
             <img
               className={css.image}
-              src={
-                movie.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                  : "/no-image.jpg" 
-              }
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
               loading="lazy"
             />
